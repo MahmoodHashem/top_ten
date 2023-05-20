@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'Splash_Screen.dart';
-import 'package:top_ten/about.dart';
+import 'package:top_ten/about.dart'; 
 
 void main() {
   runApp(
@@ -304,67 +304,73 @@ class FullScreen extends StatelessWidget {
             SizedBox(
               height: 7,
             ),
-            Container(
-              padding: EdgeInsets.all(8),
-              color: Colors.grey.shade200,
-              child: Text(content1),
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.all(8),
+                color: Colors.grey.shade200,
+                child: Text(content1),
+              ),
             ),
             SizedBox(
               height: 5,
             ),
-            Container(
-              padding: EdgeInsets.all(8),
-              color: Colors.grey.shade200,
-              child: Text(content2),
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.all(8),
+                color: Colors.grey.shade200,
+                child: Text(content2),
+              ),
             ),
             SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: Container(
-                      child: Text(
-                        'Back',
-                        style: TextStyle(
-                            fontStyle: FontStyle.italic, color: Colors.black),
-                      ),
-                      padding: EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 200,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      launch(
-                        link,
-                      );
-                      // Handle tap event
-                    },
-                    child: Container(
-                      child: Text(
-                        'Read ',
-                        style: TextStyle(fontStyle: FontStyle.italic),
-                      ),
-                      padding: EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(8),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        child: Text(
+                          'Back',
+                          style: TextStyle(
+                              fontStyle: FontStyle.italic, color: Colors.black),
+                        ),
+                        padding: EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      width: 200,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        launch(
+                          link,
+                        );
+                        // Handle tap event
+                      },
+                      child: Container(
+                        child: Text(
+                          'Read ',
+                          style: TextStyle(fontStyle: FontStyle.italic),
+                        ),
+                        padding: EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
