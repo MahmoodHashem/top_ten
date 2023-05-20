@@ -292,12 +292,15 @@ class FullScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Center(
-              child: Container(
-                height: 300,
-                color: Colors.transparent,
-                child: Image(
-                  image: AssetImage(photo),
+            Expanded(
+              flex: 5,
+              child: Center(
+                child: Container(
+                  height: 300,
+                  color: Colors.transparent,
+                  child: Image(
+                    image: AssetImage(photo),
+                  ),
                 ),
               ),
             ),
