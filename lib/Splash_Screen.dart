@@ -22,24 +22,18 @@ class _Splash_ScreenState extends State<Splash_Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade400,
+      backgroundColor: Colors.blue.shade100,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-
+        child: Stack(
           children: [
-            CircleAvatar(
-              radius: 40.0,
-              foregroundImage: AssetImage('images/168-hours.jpg'),
-            ),
+            Image.asset('images/time.jpeg'),
             Container(
-              child: Text("Manage Your Time",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'SourceSansPro',
-                ),
-              ),
+              child: Text('How we spend our days is, of course, how we spend our lives.\n—ANNIE DILLAR',
+              style: TextStyle(
+                fontSize: 80,
+                fontFamily: 'BebasNeue',
+                color: Colors.white
+              ),),
             ),
           ],
         ),

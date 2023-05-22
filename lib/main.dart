@@ -293,7 +293,7 @@ class FullScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
-              flex: 5,
+              flex: 3,
               child: Center(
                 child: Container(
                   height: 300,
@@ -308,6 +308,7 @@ class FullScreen extends StatelessWidget {
               height: 7,
             ),
             Expanded(
+              flex: 3,
               child: Container(
                 padding: EdgeInsets.all(8),
                 color: Colors.grey.shade200,
@@ -318,6 +319,7 @@ class FullScreen extends StatelessWidget {
               height: 5,
             ),
             Expanded(
+              flex: 1,
               child: Container(
                 padding: EdgeInsets.all(8),
                 color: Colors.grey.shade200,
