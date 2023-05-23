@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'Splash_Screen.dart';
-import 'package:top_ten/about.dart'; 
+import 'package:top_ten/about.dart';
+import 'package:share_plus/share_plus.dart';
 //this is a new commet
 void main() {
   runApp(
@@ -169,8 +170,11 @@ class _MyAppState extends State<MyApp> {
       appBar: AppBar(title: Text('Top Ten Time Management Books'), actions: [
         PopupMenuButton(
           itemBuilder: (BuildContext context) => <PopupMenuEntry>[
-            const PopupMenuItem(
+            PopupMenuItem(
               child: ListTile(
+                onTap: (){
+                  Share.share('Check out Google Play to Download https://example.com', subject: 'Look what I made!');
+                },
                 leading: Icon(Icons.share),
                 title: Text('Share the app'),
               ),
