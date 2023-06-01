@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(MaterialApp(
+    home: About()
+  ));
+}
 
 class About extends StatelessWidget {
   About({Key? key}) : super(key: key);

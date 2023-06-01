@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'Splash_Screen.dart';
-import 'package:top_ten/about.dart';
+import 'screens/Splash_Screen.dart';
+import 'package:top_ten/about/about.dart';
 import 'package:share_plus/share_plus.dart';
-//this is a new commet
+//this is a new commit
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       debugShowCheckedModeBanner: false,
       home:Splash_Screen(),
     ),
@@ -167,22 +167,23 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Top Ten Time Management Books'), actions: [
-        PopupMenuButton(
-          itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+      appBar: AppBar(title: const Text('Top Ten Time Management Books'),
+          actions: [
+           PopupMenuButton(
+              itemBuilder: (BuildContext context) => <PopupMenuEntry>[
             PopupMenuItem(
               child: ListTile(
                 onTap: (){
                   Share.share('Check out Google Play to Download https://example.com', subject: 'Look what I made!');
                 },
-                leading: Icon(Icons.share),
-                title: Text('Share the app'),
+                leading: const Icon(Icons.share),
+                title: const Text('Share the app'),
               ),
             ),
             PopupMenuItem(
               child: ListTile(
-                leading: Icon(Icons.roundabout_right_outlined),
-                title: Text('About'),
+                leading: const Icon(Icons.roundabout_right_outlined),
+                title: const Text('About'),
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => About()));
                 },
@@ -190,8 +191,8 @@ class _MyAppState extends State<MyApp> {
             ),
             PopupMenuItem(
               child: ListTile(
-                leading: Icon(Icons.exit_to_app),
-                title: Text('Exit'),
+                leading: const Icon(Icons.exit_to_app),
+                title: const Text('Exit'),
                 onTap:(){
                   SystemNavigator.pop();
                 }
@@ -216,7 +217,7 @@ class _MyAppState extends State<MyApp> {
             focusColor: Colors.lightBlue.shade400,
             subtitle: Text(
               '${index + 1}',
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -242,11 +243,11 @@ class _MyAppState extends State<MyApp> {
 
 class FullScreen extends StatelessWidget {
   FullScreen({Key? key, this.name, this.photo, this.content1,this.content2, this.link}) : super(key: key);
-  var name;
-  var photo;
-  var content1;
-  var content2;
-  var link;
+  String? name;
+  String? photo;
+  String? content1;
+  String? content2;
+  String? link;
 
   @override
   Widget build(BuildContext context) {
@@ -279,8 +280,8 @@ class FullScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  name,
-                  style: TextStyle(
+                  '$name',
+                  style:const TextStyle(
                       color: Colors.white,
                       fontSize: 24,
                       fontFamily: 'BebasNeue'),
@@ -303,7 +304,7 @@ class FullScreen extends StatelessWidget {
                   height: 300,
                   color: Colors.transparent,
                   child: Image(
-                    image: AssetImage(photo),
+                    image: AssetImage('$photo'),
                   ),
                 ),
               ),
@@ -316,7 +317,7 @@ class FullScreen extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(8),
                 color: Colors.grey.shade200,
-                child: Text(content1),
+                child: Text("$content1"),
               ),
             ),
             SizedBox(
@@ -327,7 +328,7 @@ class FullScreen extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(8),
                 color: Colors.grey.shade200,
-                child: Text(content2),
+                child: Text("$content2"),
               ),
             ),
             SizedBox(
@@ -362,7 +363,7 @@ class FullScreen extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         launch(
-                          link,
+                          '$link',
                         );
                         // Handle tap event
                       },
