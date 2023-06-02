@@ -14,10 +14,11 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
+
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage(""),
+                  image: AssetImage("images/bg.png"),
                   fit: BoxFit.fitWidth,
                   alignment: Alignment.topLeft
               ),

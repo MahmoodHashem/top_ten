@@ -4,12 +4,13 @@ import 'package:url_launcher/url_launcher.dart';
 import 'screens/Splash_Screen.dart';
 import 'package:top_ten/about/about.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:top_ten/screens/home.dart';
 //this is a new commit
 void main() {
   runApp(
     const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Splash_Screen(),
+      home:Home(),
     ),
   );
 }
