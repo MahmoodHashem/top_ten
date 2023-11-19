@@ -14,9 +14,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-
-            padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.all(20),
+            decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("images/bg.png"),
                   fit: BoxFit.fitWidth,
@@ -26,9 +25,8 @@ class _HomeState extends State<Home> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                SizedBox(height: 30),
                 SizedBox(
-                  height: 160,
+                  height: 190,
                   child: ScreenTitle(text: 'Top 10 Time Managnement Books'),
                 ),
                 Flexible(

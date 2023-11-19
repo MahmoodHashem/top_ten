@@ -23,7 +23,7 @@ class _BookListState extends State<BookList> {
 
   void _addBook() {
     // get data from db
-    List<Book> _books= [
+    List<Book> books= [
       Book(title: '7 Habits of Highly effective people', author: 'Stepen R.covey', img: '7Habit.jpg'),
       Book(title: '168 Hours', author: 'Laura Naderkam', img: '168-hours.jpg'),
       Book(title: 'Deep Work', author: 'Cal Newport', img: 'Deep-work.jpg'),
@@ -36,7 +36,7 @@ class _BookListState extends State<BookList> {
       Book(title: 'The Productivity Project', author: 'Chris Bailey ', img: 'the-productivity-project.jpg'),
     ];
 
-    _books.forEach((Book book) {
+    books.forEach((Book book) {
       _bookTiles.add(_buildTile(book));
     });
   }
@@ -46,11 +46,10 @@ class _BookListState extends State<BookList> {
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) => Details(book: book)));
       },
-      contentPadding: EdgeInsets.all(25),
+      contentPadding: const EdgeInsets.all(25),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-
           Text(book.title, style: TextStyle(fontSize: 20, color: Colors.grey[600])),
         ],
       ),
