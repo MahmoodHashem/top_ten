@@ -2,41 +2,112 @@ import 'package:flutter/material.dart';
 import 'package:top_ten/main.dart';
 import 'package:top_ten/screens/home.dart';
 
-class Splash_Screen extends StatefulWidget {
-  const Splash_Screen({Key? key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  State<Splash_Screen> createState() => _Splash_ScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _Splash_ScreenState extends State<Splash_Screen> {
+class _SplashScreenState extends State<SplashScreen> {
 
+  @override
   void initState(){
     super.initState();
-    _navigatetohome();
+  _navigateToHome();
+
   }
-  _navigatetohome()async{
-    await Future.delayed(
-        Duration(seconds: 3));
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>Home() ));
+  _navigateToHome() async {
+    await Future.delayed(const Duration(seconds: 3));
+    if(!mounted) return;
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>const MyApp()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade100,
+      backgroundColor: Colors.teal,
       body: Center(
-        child: Stack(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('images/time.jpeg'),
-            Container(
-              child: Text('How we spend our days is, of course, how we spend our lives.\n—ANNIE DILLAR',
-              style: TextStyle(
-                fontSize: 80,
-                fontFamily: 'BebasNeue',
-                color: Colors.white
-              ),),
+           Container(
+             decoration: BoxDecoration(
+               shape: BoxShape.circle,
+               //borderRadius: BorderRadius.circular(100),
+               boxShadow: [
+                 BoxShadow(
+                   color: Colors.black.withOpacity(0.2),
+                   offset: const Offset(-8, 3)
+                 )
+               ]
+             ),
+             child: const CircleAvatar(
+               foregroundImage: AssetImage('images/time.jpeg',
+               ),
+               radius: 100,
+              ),
+           ),
+            const SizedBox(
+              height: 10,
             ),
+          RichText(
+            textAlign: TextAlign.center,
+              text: const TextSpan(
+              children: [
+                TextSpan(
+                    text:  '"How we',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'BebasNeue',
+                        color: Colors.white
+                    )
+
+                ),
+                TextSpan(
+                    text:  'spend our days is',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'BebasNeue',
+                        color: Colors.redAccent
+                    )
+
+                ),
+                TextSpan(
+                    text:  ',of course, how we ',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'BebasNeue',
+                        color: Colors.white
+                    )
+
+                ),
+                TextSpan(
+                    text:  'spend our lives."\n',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'BebasNeue',
+                        color: Colors.redAccent
+                    )
+
+                ),
+                TextSpan(
+                    text:  '— ANNIE DILLAR',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'BebasNeue',
+                        color: Colors.white
+                    )
+
+                ),
+              ]
+              )),
+            const SizedBox(
+              height: 60,
+            ),
+            const CircularProgressIndicator(
+              color: Colors.white,
+            )
           ],
         ),
       ),
